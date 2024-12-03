@@ -1,0 +1,10 @@
+SELECT 
+    S.*
+FROM 
+    STAFFS S
+LEFT JOIN 
+    ORDERS O 
+    ON S.STAFF_ID = O.STAFF_ID 
+    AND O.STATUS = 'bought'
+WHERE 
+    O.ORDER_ID IS NULL;

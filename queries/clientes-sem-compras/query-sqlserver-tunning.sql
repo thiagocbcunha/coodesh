@@ -1,0 +1,10 @@
+SELECT 
+    C.*
+FROM 
+    CUSTOMERS C
+WHERE 
+    NOT EXISTS (
+        SELECT 1
+        FROM ORDERS O
+        WHERE O.CUSTOMER_ID = C.CUSTOMER_ID
+    );
